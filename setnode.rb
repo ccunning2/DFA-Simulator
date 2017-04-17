@@ -1,9 +1,10 @@
 class SetNode
-	attr_accessor :p, :rank
+	attr_accessor :p, :rank, :name
 
-	def initialize()
+	def initialize(name)
 		@p = self  #pointer to parent
 		@rank = 0
+		@name = name
 	end
 
 	def self.union(x,y)
