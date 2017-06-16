@@ -1,0 +1,10 @@
+# This DFA recognizes { x in {a,b}* | x odd number of a }
+# qEven   even number of a
+# qOdd   odd number of a
+states: qEven; qOdd;
+input_alphabet:  a; b
+start_state:     qEven       # even number of a
+accept_states:   qOdd  # odd number of a
+
+#everything on one line
+delta: qEven, a -> qOdd; qOdd, a -> qEven; qEven, b -> qEven;  qOdd,b -> qOdd

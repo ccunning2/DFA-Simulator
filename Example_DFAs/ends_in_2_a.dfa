@@ -1,0 +1,6 @@
+#Machine accepts strings that end in two a's
+input_alphabet:a; b
+states: q0; q1; q2; q3
+start_state: q0
+accept_states: q3
+delta: q0,a->q2; q0,b->q1; q1,a->q2; q1,b->q1; q2,b->q1; q2,a->q3; q3,a->q3;q3,b->q1

@@ -4,31 +4,6 @@ require_relative 'DFA.rb'
 
 current = nil
 
-#Below method is deprecated
-# def push_data(data)
-# 	data.strip!
-# 	datalist = data.split ';'
-# 	datalist.each do |dat|
-# 		dat.strip!
-# 		case $current
-# 		when "states"
-# 			states.push(dat)
-# 		when "input_alphabet"
-# 			input_alphabet.push(dat)
-# 		when "start_state"
-# 			start_state = dat
-# 		when "accept_states"
-# 			accept_states.push(dat)
-# 		when "delta"
-# 			dat = dat.split "->"
-# 			delta["#{dat[0].strip}"] = "#{dat[1].strip}"
-# 			puts "This is the data #{dat}"
-# 		else
-# 			puts "#{$current} not supported yet."
-# 		end
-# 	end
-# binding.pry
-# end 
 
 def parse_dfa(file)
 	delta = {}

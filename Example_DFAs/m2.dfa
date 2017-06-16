@@ -1,0 +1,11 @@
+# This DFA recognizes { x in {0,1}* | x starts with 1 }
+# qe    non-existent
+# q1   starts with 1
+# q2  starts with 0
+states: qe; q1; q2 
+input_alphabet:  0; 1
+start_state:     qe       # no bit when we start
+accept_states:   q1  # accept as long as starts with 1
+
+#everything on one line
+delta: qe,1 -> q1; q1,1 -> q1; q2,1 -> q2;  qe,0 -> q2; q1,0 -> q1; q2,0 -> q2 
