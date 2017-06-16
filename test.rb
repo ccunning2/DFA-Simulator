@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require 'pry'
 require_relative 'DFA.rb'
 
 
@@ -74,7 +73,6 @@ def parse_dfa(file)
 	return DFA.new(states, input_alphabet, start_state,accept_states,delta)
 end
 
-binding.pry
 args = {}
 compare = false
 s = ""
@@ -109,7 +107,11 @@ if !args[2].nil?
 	else
 		s = args[2]
 		accept = m1.run(s)
-		puts accept
+		if accept
+			puts "Yes"
+		else
+			puts "No"
+		end
 	end
 end
 

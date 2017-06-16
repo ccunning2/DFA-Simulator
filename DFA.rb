@@ -81,7 +81,6 @@ class DFA
 				r2 = SetNode.find_set(q)
 
 				if r1 != r2
-					binding.pry
 					SetNode.union(r1, r2)
 					queue.push p #From m1
 					queue.push q #From m2
@@ -91,7 +90,7 @@ class DFA
 					q_accept = m2.accept_states.include? q.name
 
 					if p_accept == q_accept
-						continue
+						next
 					else
 						#Need to create witness string
 						witness = ""
@@ -102,12 +101,12 @@ class DFA
 							witness = "#{witness_components[2]}#{witness}"
 							key = "#{witness_components[0]},#{witness_components[1]}"
 						end
-						return "DFA's not equivalent, witness:#{witness}"
+						return "No, counter-example string: #{witness}"
 					end
 				end
 				
 			end #End input alphabet each
 		end
-		return "The DFA's are equivalent"
+		return "Yes"
 	end
 end
